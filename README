@@ -1,0 +1,89 @@
+# Smart Home API
+
+## Overview
+This project implements a **Smart Home API** using **FastAPI**. It provides endpoints for managing users, houses, rooms, and devices in a smart home system. The focus is on:
+- API design and structure
+- Input validation and error handling
+- Automated testing using **pytest**
+- Continuous integration with **GitHub Actions**
+
+## Features
+- **User Management**: Create users with email and password validation.
+- **House Management**: Assign houses to users with metadata support.
+- **Room Management**: Add rooms to houses.
+- **Device Management**: Assign devices to rooms and manage device status.
+- **Error Handling**: Provides structured validation and error responses.
+- **Automated Testing**: Includes unit tests for API validation.
+- **GitHub Actions**: Automated CI/CD workflow to run tests on every push.
+
+## API Endpoints
+
+### User Endpoints
+- `POST /users/` → Create a new user
+- `GET /users/{user_id}` → Retrieve user details
+
+### House Endpoints
+- `POST /houses/` → Create a house
+- `GET /houses/{house_id}` → Retrieve house details
+- `PUT /houses/{house_id}` → Update house details
+- `DELETE /houses/{house_id}` → Delete a house
+
+### Room Endpoints
+- `POST /rooms/` → Create a room
+- `GET /rooms/{room_id}` → Retrieve room details
+- `PUT /rooms/{room_id}` → Update room details
+- `DELETE /rooms/{room_id}` → Delete a room
+
+### Device Endpoints
+- `POST /devices/` → Create a device
+- `GET /devices/{device_id}` → Retrieve device details
+- `PUT /devices/{device_id}` → Update device details
+- `DELETE /devices/{device_id}` → Delete a device
+
+## Installation
+
+### Prerequisites
+- Python 3.9+
+- FastAPI & dependencies
+
+### Install dependencies
+```bash
+pip install fastapi uvicorn pydantic email-validator pytest
+```
+
+### Run the API
+```bash
+uvicorn api:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Open API Documentation
+After running the API, visit:
+- **Swagger UI**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- **Redoc UI**: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+## Running Tests
+To run unit tests:
+```bash
+pytest tests/
+```
+
+## GitHub Actions
+This project includes automated CI/CD using GitHub Actions.
+- **Workflow file**: `.github/workflows/ci.yml`
+- Runs tests automatically on push to `main`.
+
+## Deployment
+For cloud deployment, you can use:
+- **Docker**: Build and run the API as a container.
+- **Cloud Services**: Deploy using AWS, GCP, or Azure.
+
+## Contributing
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m "Add new feature"`).
+4. Push to GitHub (`git push origin feature-branch`).
+5. Submit a pull request.
+
+## License
+This project is licensed under the MIT License.
+
