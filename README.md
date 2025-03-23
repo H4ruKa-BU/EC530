@@ -1,8 +1,3 @@
-当然可以。以下是一个 **专业且完整的 `README.md`** 文件，包含功能介绍、运行方式、文件结构、示例等内容。你可以直接复制粘贴到 GitHub 项目中使用：
-
----
-
-```markdown
 # P2P Messaging System
 
 This project implements a peer-to-peer (P2P) messaging system in Python that includes socket-based communication, RESTful messaging APIs, a publish-subscribe mechanism, AES-based encryption, and local key management. It is designed as an educational example of decentralized communication without reliance on cloud-based or central servers.
