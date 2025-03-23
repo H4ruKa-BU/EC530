@@ -9,25 +9,15 @@ A Python-based peer-to-peer messaging system with API, pub-sub, encryption, and 
 - AES encrypted messages
 - Local file storage
 
-## How to Run
-1. Install requirements:
-   ```bash
-   pip install -r requirements.txt
-python server.py
-python client.py
-python api.py
-
-Project Structure
-server.py: socket server
-
-client.py: socket client
-
-api.py: Flask API
-
-pubsub.py: pub-sub logic
-
-security.py: encryption module
-
-storage.py: local JSON storage
-
-utils.py: helper functions
+p2p_messaging_system/
+├── README.md
+├── requirements.txt
+├── server.py
+├── client.py
+├── api.py
+├── pubsub.py
+├── security.py
+├── storage.py
+├── utils.py
+├── keys.py          ← (NEW)
+├── keys.json        ← (auto-generated on run)
