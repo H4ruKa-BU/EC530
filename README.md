@@ -129,6 +129,6 @@ This project is released under the MIT License.
 
 ## Author
 
-Created by [Your Name]. Contributions welcome via pull requests.
-```
+Created by Baichuan Xu. Contributions welcome via pull requests.
+
 
