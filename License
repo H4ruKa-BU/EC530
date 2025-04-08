@@ -1,0 +1,55 @@
+
+### 3. **main.py**
+
+The main application file that runs the interactive chatbot loop and integrates with AI.
+
+```python
+import sqlite3
+import pandas as pd
+from ai_helper import generate_sql_query
+
+def load_csv_to_sqlite(csv_file, db_file="database.db"):
+    conn = sqlite3.connect(db_file)
+    cursor = conn.cursor()
+    
+    # Load CSV data into a pandas DataFrame
+    df = pd.read_csv(csv_file)
+    
+    # Create table dynamically
+    table_name = csv_file.split('/')[-1].split('.')[0]
+    df.to_sql(table_name, conn, if_exists='replace', index=False)
+    
+    conn.commit()
+    conn.close()
+    print(f"Data from {csv_file} loaded into SQLite.")
+
+def interactive_chat():
+    while True:
+        user_input = input("You: ").strip()
+        
+        if user_input.lower() == "exit":
+            break
+        
+        # Pass input to AI helper for SQL generation
+        sql_query = generate_sql_query(user_input)
+        
+        if sql_query:
+            print(f"SQL Query: {sql_query}")
+            
+            # Execute SQL query
+            conn = sqlite3.connect('database.db')
+            cursor = conn.cursor()
+            cursor.execute(sql_query)
+            results = cursor.fetchall()
+            
+            for row in results:
+                print(row)
+            
+            conn.close()
+        else:
+            print("Sorry, I couldn't understand that. Please try again.")
+
+if __name__ == "__main__":
+    print("Welcome to the LLM SQL Assistant.")
+    load_csv_to_sqlite('data/sample_data.csv')  # Sample CSV for testing
+    interactive_chat()
