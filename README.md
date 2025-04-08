@@ -1,5 +1,3 @@
-Here is a more comprehensive and detailed version of the `README.md` for your project:
-
 ```markdown
 # LLM SQL Project
 
