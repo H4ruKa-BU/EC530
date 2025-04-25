@@ -1,0 +1,16 @@
+
+---
+
+### ✅ `requirements.txt`
+
+```txt
+fastapi
+uvicorn
+pydantic
+openai
+sqlalchemy
+psycopg2-binary
+python-multipart
+pdfplumber
+python-docx
+pytest
