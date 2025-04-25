@@ -1,0 +1,33 @@
+openapi: 3.0.0
+info:
+  title: Document Analyzer API
+  version: 1.0.0
+paths:
+  /analyze:
+    post:
+      summary: Analyze a document
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                student_id:
+                  type: string
+                document_text:
+                  type: string
+                rubric_id:
+                  type: string
+      responses:
+        '200':
+          description: Analysis result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  grade:
+                    type: integer
+                  feedback:
+                    type: string
